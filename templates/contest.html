@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <main class="hero">
+    <h1>{{ contest['name'] }}</h1>
+    <p>{{ contest['description'] }}</p>
+    <small class="badge info">{% if contest['closed'] %}Contest Closed{% else %}Contest Open{% endif %}</small>
+    {% if role == "participant" and not contest['closed'] %}
+    <div class="flex">
+        <a href="/contest/{{ contest['$id'] }}/submit"><button>Submit Art</button></a>
+    </div>
+    {% elif role == "admin" %}
+    {% set cid = contest['$id'] %}
+    <div class="flex">
+        <a href="/contest/{{ contest['$id'] }}/close"><button>{% if contest['closed'] %}Reopen Contest{% else %}Close Contest{% endif %}</button></a>
+        <a href="/contest/{{ contest['$id'] }}/edit"><button class="secondary"><ion-icon name="create"></ion-icon></button></a>
+        <a><button class="secondary" onclick="if (confirm('Are you sure you want to delete this contest? This action is irreversible.')) window.location.pathname = '/contest/{{ cid }}/delete'"><ion-icon name="trash"></ion-icon></button></a>
+    </div>
+    {% endif %}
+
+    </main>
+{% endblock %}

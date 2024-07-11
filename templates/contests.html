@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main class="hero">
+    <h1>All Contests</h1>
+    <p>Submit your bird art for a chance to be featured in our gallery/publications!</p>
+    {% if role == "admin" %}
+    <div class="flex">
+        <a href="/contest/new"><button>Create Contest</button></a>
+    </div>
+    {% endif %}
+    <div class="contests">
+        {% for contest in contests %}
+        <div class="card">
+            <h2 class="card-title">{{ contest['name'] }}</h2>
+            <small>{% if contest['closed'] %}Contest Closed{% else %}Contest Open{% endif %}</small>
+            <p>{{ contest['description'] }}</p>
+            <div class="card-footer"><a href="/contest/{{ contest['$id'] }}">Visit</a></div>
+        </div>
+        {% endfor %}
+    </div>
+  </main>
+{% endblock %}

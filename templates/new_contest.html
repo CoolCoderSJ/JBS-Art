@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main class="hero">
+    <h1>Create Contest</h1>
+    <form method="post" action="/contest/new" style="width: 40%; margin-top: 0;">
+
+        <div class="field">
+            <label>Name</label>
+            <input name="name" type="text" placeholder="Contest name" />
+        </div>
+      <br>
+
+        <div class="field">
+            <label>Description</label>
+            <input name="desc" type="text" placeholder="Contest description" />
+        </div>
+      <br>
+
+      <button type="submit">Create</button>
+      </form>
+  </main>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .hero {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+</style>
+
+
+  <main class="hero">
+    <h1>Junior Birding Society Art Contest</h1>
+    <p>Submit your bird art for a chance to be featured in our gallery/publications!</p>
+    <a href="/contests"><button>View Contests</button></a>
+
+    <img src="/static/images/drawing.png" style="position: absolute; left: 125px; margin-top: 250px; transform: rotate(-25deg);" />
+    <img src="/static/images/drawing2.png" style="position: absolute; right: 125px; margin-top: 250px; transform: rotate(25deg);" />
+  </main>
+{% endblock %}

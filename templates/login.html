@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <main class="hero">
+      <h1>Login</h1>
+      <p>Don't have an account? One will be made for you when you login.</p>
+
+      <form method="post" action="/login" style="width: 40%; margin-top: 0;">
+
+        <div class="field">
+            <label>Email</label>
+            <input name="email" type="email" placeholder="Email" />
+        </div>
+      <br>
+
+        <div class="field">
+            <label>Password</label>
+            <input name="password" type="password" placeholder="Password" />
+        </div>
+      <br>
+
+      <button type="submit">Login</button>
+      </form>
+
+    </main>
+{% endblock %}

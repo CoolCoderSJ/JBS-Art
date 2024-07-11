@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JBS Art</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.3/animate.min.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://simplist.shuchir.dev/simplist.css">
+    <link rel="stylesheet" href="https://use.typekit.net/fvp0cln.css">
+    <link rel="stylesheet" href="/static/style.css" />
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <nav>
+      <div>
+          <h2><a href="/" style="font-weight: bold;">JBS Art</a></h2>
+      </div>
+      <div>
+          <a href="/contests">All Contests</a>
+          <a href="/winners">Past Winners</a>
+          {% if role == "participant" %}
+            <a href="/me/submissions">My Submissions</a>
+            <a href="/me/contests">My Profile</a>
+          {% endif %}
+          {% if not role %}
+            <a href="/login">Login</a>
+          {% else %}
+            <a href="/logout">Logout</a>
+          {% endif %}
+      </div>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+
+    <footer>
+      <nav>
+        <div>
+          <h3>Junior Birding Society&nbsp; <span class="small"><i>Fiscally sponsored by The Hack Foundation. EIN: 81-2908499</i></span></h3>
+        </div>
+        <div>
+          <a href="https://link.jrbirding.org/donate">Donate</a>
+          <a href="#tally-open=3qaxqk&tally-layout=modal&tally-width=500&tally-hide-title=1">Join</a>
+        </div>
+      </nav>
+    </footer>
+</body>
+</html>

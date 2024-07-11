@@ -1,0 +1,399 @@
+body {
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, .primary {
+    color: #892226;
+  }
+  
+  h1 {
+    font-family: "brevia", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  h2, h3, h4 {
+    font-family: "brevia", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  h5, h6, small, i, p, a, button, label, input, .alert, .badge {
+    font-family: "brevia", sans-serif;
+    font-weight: 400;
+  }
+  
+  :root {
+    --primary-bg: #892226;
+    --secondary-text: #892226;
+    --light-text: rgb(255, 255, 255);
+    --secondary-bg: #FFFFFF;
+  }
+  
+  button:hover {
+    background-color: var(--secondary-bg);
+  }
+  
+  button.noorange:hover {
+    background-color: white;
+  }
+  
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  #hero-splash {
+    background-image: url('hero.svg');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    fill: #ffcb86;
+  }
+  
+  .hero h1 {
+    margin-top: 7rem;
+  }
+  
+  button a {
+    text-decoration: none;
+  }
+  
+  a button {
+    text-decoration: none;
+  }
+  
+  .big {
+    font-size: 3rem;
+  }
+  
+  .medium {
+    font-size: 2rem;
+  }
+  
+  .bigger {
+    font-size: 1.25rem;
+  }
+  
+  .alignRight {
+    text-align: right;
+  }
+  
+  section { 
+    padding: 3rem 0;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: transparent;
+    z-index: 10;
+  }
+  
+  #section2_bg {
+    background-image: url('section2.svg');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    height: 115vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+  }
+  
+  #section3_bg {
+    background-image: url('section3.svg');
+    background-size: cover;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    height: 155vh;
+    margin-top: 10rem;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: row !important;
+    gap: 1rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flex-right {
+    justify-content: flex-end;
+  }
+  
+  section img {
+    width: 250px;
+  }
+  
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .card {
+    border-radius: 6px;
+    background-color: white; 
+    color: #892226; 
+    width: 400px;
+  }
+  
+  .contests {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 6px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  
+  .person {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .person img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+  }
+  
+  .person h3 {
+    margin-top: 15px;
+    margin-bottom: 2px;
+  }
+  
+  .person p {
+    margin-top: 0px;
+  }
+  
+  ion-icon {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .contact-btn {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+  
+  footer {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .small {
+    font-size: 0.75rem;
+  }
+  
+  footer a:hover {
+    color: var(--secondary-bg)
+  }
+
+a:hover {
+    color: #e24b4b !important;
+}
+  
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+  
+    .hero {
+      flex-direction: column;
+    }
+  
+    nav {
+      flex-direction: column;
+    }
+  
+    section {
+      flex-direction: column;
+    }
+  
+    .hero h1 {
+      margin-top: 0;
+    }
+  
+    .hero img {
+      width: 100%;
+    }
+  
+    .flex {
+      flex-direction: column !important;
+    }
+  
+    .grid-3 {
+      grid-template-columns: 1fr;
+    }
+  
+    .person img {
+      height: 100px;
+      width: 100px;
+    }
+  
+    .person h3 {
+      font-size: 1rem;
+    }
+  
+    .person p {
+      font-size: 0.75rem;
+    }
+  
+    .card img {
+      height: 150px;
+    }
+  
+    .card h2 {
+      font-size: 1.25rem;
+    }
+  
+    .card p {
+      font-size: 0.75rem;
+    }
+  
+    .big {
+      font-size: 2rem;
+    }
+  
+    .medium {
+      font-size: 1.5rem;
+    }
+  
+    .bigger {
+      font-size: 1rem;
+    }
+  
+    .small {
+      font-size: 0.5rem;
+    }
+  
+    .partnersList {
+      flex-direction: row !important;
+      flex-wrap: wrap;
+    }
+  
+    .partnersList div {
+      width: fit-content;
+    }
+  }
+  
+  @media (min-width: 2160px) {
+    .hero {
+      min-height: 30vh;
+    }
+    section {
+      min-height: 20vh;
+    }
+    body {
+      padding-left: 20%;
+      padding-right: 20%;
+    }
+  
+    .hero h1 {
+      font-size: 5rem;
+    }
+  
+    .hero img {
+      width: 50%;
+    }
+  
+    .big {
+      font-size: 5rem;
+    }
+  
+    .medium {
+      font-size: 3rem;
+    }
+  
+    .bigger {
+      font-size: 2rem;
+    }
+  
+    .small {
+      font-size: 1rem;
+    }
+  
+    .person img {
+      height: 300px;
+      width: 300px;
+    }
+  
+    .person h3 {
+      font-size: 2rem;
+    }
+  
+    .person p {
+      font-size: 1.5rem;
+    }
+  
+    .card img {
+      height: 300px;
+    }
+  
+    .card h2 {
+      font-size: 3rem;
+    }
+  
+    .card p {
+      font-size: 1.5rem;
+    }
+  
+    .partnersList {
+      flex-direction: row !important;
+      flex-wrap: wrap;
+    }
+  
+    .partnersList div {
+      width: fit-content;
+    }
+  
+    .contact-btn {
+      font-size: 1.5rem;
+    }
+  
+    footer {
+      font-size: 1.5rem;
+    }
+  
+    footer a:hover {
+      font-size: 1.5rem;
+    }
+  }
