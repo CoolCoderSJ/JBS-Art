@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main class="hero">
+    <h1>Submit Art</h1>
+    <p>Submit your bird art for a chance to be featured in our gallery/publications!</p>
+    <form method="post" action="/contest/{{ contest['$id'] }}/submit" enctype="multipart/form-data" style="width: 40%; margin-top: 0;">
+        <div class="field">
+            <label>Title</label>
+            <input required name="title" type="text" placeholder="Art title" />
+        </div>
+      <br>
+        <div class="field">
+            <label>Description</label>
+            <input required name="description" type="text" placeholder="A brief description of your art piece" />
+        </div>
+      <br>
+        <div class="field">
+            <label>Upload Image</label>
+            <input required name="file" type="file" placeholder="Art Piece" accept=".png,.jpg,.jpeg,.bmp,.svg,.tiff,.tif" />
+        </div>
+      <br>
+      <small>Note: Your name, {{ name }}, will be shown with this submission. To change your name, please visit your profile.</small>
+      <button type="submit">Submit</button>
+      </form>
+  </main>
+{% endblock %}

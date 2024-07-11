@@ -12,7 +12,7 @@
         {% for contest in contests %}
         <div class="card">
             <h2 class="card-title">{{ contest['name'] }}</h2>
-            <small>{% if contest['closed'] %}Contest Closed{% else %}Contest Open{% endif %}</small>
+            <small class="badge info">{% if contest['closed'] %}Contest Closed{% else %}Contest Open{% endif %}</small>
             <p>{{ contest['description'] }}</p>
             <div class="card-footer"><a href="/contest/{{ contest['$id'] }}">Visit</a></div>
         </div>

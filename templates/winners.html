@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main class="hero">
+    <h1>Winners</h1>
+    <p>Check out the winners of our contests!</p>
+    <br><br>
+    <div class="winners">
+        {% for contest in submissions.keys() %}
+            <h2>{{ contests[contest] }}</h2>
+            {% for winner in submissions[contest] %}
+                <div class="card">
+                    <h2 class="card-title">{{ winner['name'] }}</h2>
+                    <p>{{ winner['description'] }}</p>
+                    <img style="object-fit: contain; height: 300px;" src="https://appwrite.shuchir.dev/v1/storage/buckets/submissions/files/{{ winner['fileId'] }}/view?project=jbs-art" alt="{{ winner['name'] }}" />
+                    <div class="card-footer"><a href="/contest/{{ winner['contestId'] }}">Visit Contest</a></div>
+                </div>
+            {% endfor %}
+
+            {% if not submissions[contest] %}
+                <p>No winners yet!</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    </main>
+{% endblock %}

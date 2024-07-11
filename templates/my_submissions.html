@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <main class="hero">
+    <h1>Your Submissions</h1>
+    <br><br>
+
+    {% if submissions %}
+    <div class="submissions">
+        {% for submission in submissions %}
+        {% set sid = submission['$id'] %}
+        {% set cid = submission['contestId'] %}
+        <div class="card">
+            <h2 class="card-title">{{ submission['title'] }}</h2>
+            <p>{{ submission['description'] }}</p>
+            <img style="object-fit: contain; height: 300px;" src="https://appwrite.shuchir.dev/v1/storage/buckets/submissions/files/{{ submission['fileId'] }}/view?project=jbs-art" alt="{{ submission['title'] }}" />
+            <small class="badge info">{{ contests[cid]['name'] }}</small>
+            {% if not contests[cid]['closed'] %}
+            <div class="card-footer">
+                <a href="/contest/{{ cid }}/submission/{{ submission['$id'] }}/edit"><button class="secondary"><ion-icon name="create"></ion-icon></button></a>
+                <a><button class="secondary" onclick="if (confirm('Are you sure you want to delete this submission? This action is irreversible.')) window.location.pathname = '/contest/{{ cid }}/submission/{{ sid }}/delete'"><ion-icon name="trash"></ion-icon></button></a>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No submissions yet!</p>
+    {% endif %}
+
+
+    </main>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+  <main class="hero">
+    <h1>Edit Contest</h1>
+    <form method="post" action="/contest/{{ contest['$id'] }}/edit" style="width: 40%; margin-top: 0;">
+        <div class="field">
+            <label>Name</label>
+            <input name="name" type="text" placeholder="Contest name" value="{{ contest['name'] }}" />
+        </div>
+      <br>
+        <div class="field">
+            <label>Description</label>
+            <input name="desc" type="text" placeholder="Contest description" value="{{ contest['description'] }}" />
+        </div>
+      <br>
+      <button type="submit">Edit</button>
+      </form>
+  </main>
+{% endblock %}

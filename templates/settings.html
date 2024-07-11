@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="hero">
+        <h1>Settings</h1>
+        <p>Update your account settings.</p>
+    
+        <form method="post" action="/settings" style="width: 40%; margin-top: 0;">
+    
+            <div class="field">
+                <label>Email - Cannot be changed</label>
+                <input name="email" type="email" placeholder="Email" value="{{ user['email'] }}" readonly />
+            </div>
+        <br>
+
+            <div class="field">
+                <label>Name</label>
+                <input name="name" type="text" placeholder="Name" value="{{ user['name'] }}" />
+            </div>
+        <br>
+            
+                <div class="field">
+                    <label>Password</label>
+                    <input name="password" type="password" placeholder="Password" />
+                </div> 
+    
+        <button type="submit">Update</button>
+        </form>
+    </main>
+{% endblock %}
